@@ -209,7 +209,7 @@ submitButton.addActionListener(e -> {
 
         return;
     }
-    if (!email.contains("@")) {
+    if (!email.contains("@") || !email.contains(".")) {
 
     JOptionPane.showMessageDialog(
             frame,
