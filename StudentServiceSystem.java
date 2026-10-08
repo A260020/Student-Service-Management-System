@@ -130,9 +130,9 @@ panel.add(searchButton);
 studentSearchButton.addActionListener(e -> {
 
 
-    String requestId = searchField.getText().trim();
+    String studentId = studentSearchField.getText().trim();
 
-    if (requestId.isEmpty()) {
+   if (studentId.isEmpty()) {
         JOptionPane.showMessageDialog(
                 frame,
                 "Please enter a Request ID."
@@ -140,7 +140,7 @@ studentSearchButton.addActionListener(e -> {
         return;
     }
 
-    ServiceRequest found = findByRequestId(requestId);
+    ServiceRequest found = findByStudentId(studentId);
 
     if (found == null) {
         JOptionPane.showMessageDialog(
