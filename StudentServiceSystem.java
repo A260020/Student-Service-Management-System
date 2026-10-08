@@ -94,6 +94,7 @@ panel.add(new JScrollPane(descriptionArea));
 panel.add(requestDisplayArea);
 panel.add(new JScrollPane(requestDisplayArea));
 JButton submitButton = new JButton("Submit Request");
+JButton viewAllButton = new JButton("View All Requests");
 JLabel statusLabel = new JLabel("Status:");
 
 String[] statuses = {
@@ -108,6 +109,24 @@ panel.add(statusLabel);
 panel.add(statusBox);
 
 panel.add(submitButton);
+panel.add(viewAllButton);
+viewAllButton.addActionListener(e -> {
+
+    requestDisplayArea.setText("");
+
+    for (ServiceRequest request : requests) {
+
+        requestDisplayArea.append(
+                "Request ID: " + request.getRequestId()
+                + "\nStudent ID: " + request.getStudent().getStudentId()
+                + "\nStudent Name: " + request.getStudent().getName()
+                + "\nService Type: " + request.getServiceType()
+                + "\nDescription: " + request.getDescription()
+                + "\nStatus: " + request.getStatus()
+                + "\n-------------------------\n"
+        );
+    }
+});
 JButton updateStatusButton = new JButton("Update Status");
 JLabel searchLabel = new JLabel("Search:");
 JLabel studentSearchLabel = new JLabel("Student ID:");
