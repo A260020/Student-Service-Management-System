@@ -258,7 +258,7 @@ if (!contact.matches("\\d+")) {
     return;
 }
 
-    String requestId = "REQ" + (requests.size() + 1);
+    String requestId = "REQ" + System.currentTimeMillis();
 
     Student student = new Student(
             studentId,
