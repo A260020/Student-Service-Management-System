@@ -22,6 +22,17 @@ public ServiceRequest findByRequestId(String requestId) {
 
     return null;
 }
+public ServiceRequest findByStudentId(String studentId) {
+
+    for (ServiceRequest request : requests) {
+
+        if (request.getStudent().getStudentId().equals(studentId)) {
+            return request;
+        }
+    }
+
+    return null;
+}
  public void createGUI() {
 
     JFrame frame = new JFrame("Student Service Management System");
